@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-
 }
 
 .background {
@@ -24,7 +23,8 @@ body {
 
 .widget-outer {
   background: rgba(34, 33, 33, 0.555);  
-  margin-top: 10vh;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 
   display: block;
   margin-left: auto;
@@ -33,17 +33,39 @@ body {
   height: 75%;
   width: 80%;
 
+  position: relative;
+}
+
+.Container{
+  height: 100%;
+  width: 100%;
+}
+
+div.row {
+  height: 100%;
+  width: 100%;
+}
+
+.Column {
+  height: 100%;
+  width: 100%;
 }
 
 .leftPart {
-  background: #3b8d99;
-  height: 100%;
+  background: url("https://images.idgesg.net/images/article/2018/10/cyber-security_lock_padlock_firewall_code_breach_password-100777447-large.jpg");
+  height: 95%;
+  width: 93%;
   background-size: cover;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #000;
+
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 input[type="text"] {
@@ -58,4 +80,21 @@ input[type="text"] {
   margin-bottom: 30px;
   margin-right: 20px;
   font-size: 20px;
+}
+
+.rightPart {
+  margin-top: 1vh;
+  height: 95%;
+  width: 88%;
+  background-size: cover;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  color: #000;
+
+  /* position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); */
 }
