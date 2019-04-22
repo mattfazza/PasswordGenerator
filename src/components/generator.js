@@ -17,6 +17,7 @@ class Generator extends React.Component {
         super(props)
 
         this.handleCheckbox = this.handleCheckbox.bind(this)
+        this.generate = this.generate.bind(this)
 
         this.state = {
             checkboxGroup: {
@@ -33,8 +34,10 @@ class Generator extends React.Component {
         this.setState({ checkboxGroup: obj })
         console.log(this.state.checkboxGroup);
         console.log(this.numbers);
-
     }
+
+    //TODO handle input box
+    //TODO handle button 'generate'
 
     getLength() {
         if (this.state.checkboxGroup.option1) {
@@ -45,15 +48,17 @@ class Generator extends React.Component {
     }
 
     generate() {
-        if (!this.state.checkboxGroup["option2"] && !this.state.checkboxGroup.option3) {
+        if (!this.state.checkboxGroup["option2"] && !this.state.checkboxGroup["option3"]) {
             this.combined = this.numbers + this.lower
-        } else if (!this.state.checkboxGroup.option2 && this.state.checkboxGroup.option3) {
+        } else if (!this.state.checkboxGroup["option2"] && this.state.checkboxGroup["option3"]) {
             this.combined = this.numbers + this.lower + this.upper
         } else {
             this.combined = this.numbers + this.lower + this.upper + this.specials
         }
 
-        let realLength = this.getLength()
+        // let realLength = this.getLength()
+        // let shuffled = this.combined.split("")
+        // var password = shuffled.substr(0, realLength)
 
 
     }
@@ -65,7 +70,7 @@ class Generator extends React.Component {
                 Please, select what your password should look like, and click generate
                 <form>
                     <input type="text"></input>
-                    <Button color="fff" style={{ color: "black" }}>Generate</Button>{' '}
+                    <Button color="fff" style={{ color: "black" }}>Generate</Button>
                     <p />
                     <input type="checkbox" name="checkboxGroup" value="option1" checked={this.state.checkboxGroup['option1']} onChange={this.handleCheckbox}></input>
                     Passoword must be between 8 and 16 characters
