@@ -7,6 +7,13 @@ class Generator extends React.Component {
 
     constructor(props) {
 
+
+        var numbers = "0123456789"
+        var specials = "!@#$%^&*()_+=-{}|\][:?><,."
+        var upper = "QWERTYUIOPASDFGHJKLZXCVBNM"
+        var lower = "qwertyuiopasdfghjklzxcvbnm"
+        var combined = ""
+
         super(props)
 
         this.handleCheckbox = this.handleCheckbox.bind(this)
@@ -25,16 +32,32 @@ class Generator extends React.Component {
         obj[event.target.value] = event.target.checked
         this.setState({ checkboxGroup: obj })
         console.log(this.state.checkboxGroup);
+        console.log(this.numbers);
 
     }
 
-    getLength(limit) {
-        if (limit) {
+    getLength() {
+        if (this.state.checkboxGroup.option1) {
             return Math.floor(Math.random() * 16) + 8
         } else {
             return Math.floor(Math.random() * 32) + 8
         }
     }
+
+    generate() {
+        if (!this.state.checkboxGroup["option2"] && !this.state.checkboxGroup.option3) {
+            this.combined = this.numbers + this.lower
+        } else if (!this.state.checkboxGroup.option2 && this.state.checkboxGroup.option3) {
+            this.combined = this.numbers + this.lower + this.upper
+        } else {
+            this.combined = this.numbers + this.lower + this.upper + this.specials
+        }
+
+        let realLength = this.getLength()
+
+
+    }
+
 
     render() {
         return (
