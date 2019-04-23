@@ -39,7 +39,7 @@ class Generator extends React.Component {
     //TODO handle input box
 
     getLength() {
-        if (this.state.checkboxGroup.option1) {
+        if (this.state.checkboxGroup.option1 == true) {
             return Math.floor(Math.random() * 16) + 8
         } else {
             return Math.floor(Math.random() * 32) + 8
@@ -59,6 +59,8 @@ class Generator extends React.Component {
         }
 
         let realLength = this.getLength()
+        console.log(realLength);
+
         let shuffled = combined.split('').sort(function () { return 0.5 - Math.random() }).join('')
         let password = shuffled.substr(0, realLength)
 
@@ -73,7 +75,7 @@ class Generator extends React.Component {
                 Please, select what your password should look like, and click generate
                 <form>
                     <input type="text" id="theInput"></input>
-                    <Button color="fff" style={{ color: "black" }} onClick={this.generate}>Generate</Button>
+                    <Button color="fff" style={{ color: "rgb(216, 214, 99)", fontWeight: "normal" }} onClick={this.generate}>Generate</Button>
                     <p />
                     <input type="checkbox" name="checkboxGroup" value="option1" checked={this.state.checkboxGroup['option1']} onChange={this.handleCheckbox}></input>
                     Passoword must be between 8 and 16 characters

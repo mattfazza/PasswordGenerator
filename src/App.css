@@ -72,10 +72,10 @@ input[type="text"] {
   background-color: transparent;
   border: 0;
   border-bottom: solid 1px #f16051;
-  width: 30%;
+  width: 100%;
   padding-bottom: 4px;
   color: #fff !important;
-  font-weight: lighter;
+  font-weight: normal;
   letter-spacing: 2px;
   margin-bottom: 30px;
   margin-right: 20px;
@@ -91,10 +91,5 @@ input[type="text"] {
   align-items: center;
   justify-content: center;
   text-align: left;
-  color: #000;
-
-  /* position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%); */
+  color: white;
 }
