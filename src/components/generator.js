@@ -36,8 +36,7 @@ class Generator extends React.Component {
         this.setState({ checkboxGroup: obj })
     }
 
-    //TODO handle input box
-
+    //TODO: get rid of this function and implement a simple Math.floor inside generate()
     getLength() {
         if (this.state.checkboxGroup.option1 == true) {
             return Math.floor(Math.random() * 16) + 8
@@ -58,6 +57,7 @@ class Generator extends React.Component {
             combined = this.numbers + this.lower + this.upper
         }
 
+        //Math.random().toString().slice(2,11);
         let realLength = this.getLength()
         console.log(realLength);
 
